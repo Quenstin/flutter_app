@@ -13,7 +13,23 @@ class PersonWidget extends StatelessWidget {
     '考前猜题',
     '每天一到热门题',
     '产品勘误表',
-    '我的答案'
+    '我的答案',
+    '收藏管理',
+    '我的评论',
+    '我喜欢的'
+  ];
+
+  List<IconData> icons = [
+    Icons.account_balance_wallet,
+    Icons.upload_sharp,
+    Icons.history,
+    Icons.hot_tub,
+    Icons.one_k,
+    Icons.tab,
+    Icons.code,
+    Icons.star,
+    Icons.compare,
+    Icons.live_tv
   ];
 
   @override
@@ -40,44 +56,13 @@ class PersonWidget extends StatelessWidget {
             return Container(
               height: 50,
               child: ListItems(
-                icon: Icons.video_settings,
-                title: "视频管理",
+                icon: icons[index],
+                title: data[index],
               ),
             );
-          }, childCount: 7),
+          }, childCount: data.length),
         )
       ],
     );
-    // return ListView(
-    //   children: [
-    //     Container(
-    //       height: 200,
-    //       alignment: Alignment.center,
-    //       color: Colors.brown,
-    //       child: ListTile(
-    //         leading: Container(
-    //           height: 100,
-    //           width: 100,
-    //           decoration: BoxDecoration(
-    //             shape: BoxShape.circle,
-    //             image: DecorationImage(
-    //                 image: AssetImage("image/yuwen.png"), fit: BoxFit.contain),
-    //           ),
-    //         ),
-    //         title: Text("NewFlutter"),
-    //         subtitle: Text(
-    //             "If you want to see a thousand miles, go to the next level"),
-    //       ),
-    //     ),
-    //   ListItems(icon: Icons.video_settings,title: "视频管理",),
-    //   ListItems(icon: Icons.upload_sharp,title: "上传视频",),
-    //   ListItems(icon: Icons.history,title: "播放记录",),
-    //   ListItems(icon: Icons.account_balance_wallet,title: "考前猜题",),
-    //   ListItems(icon: Icons.looks_one_rounded,title: "每天一到热门题",),
-    //   ListItems(icon: Icons.error_outline_outlined,title: "产品勘误表",),
-    //   ListItems(icon: Icons.my_library_add,title: "我的答案",),
-    //
-    //   ],
-    // );
   }
 }
