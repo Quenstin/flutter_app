@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/app/course_widget.dart';
+import 'package:flutter_app/app/person_widget.dart';
 
 import 'home_widget.dart';
 
@@ -9,7 +11,8 @@ class MainWidget extends StatefulWidget {
 
 class MainWidgetState extends State {
   var currentIndex = 0;
-  var pages = [HomeWidget(), HomeWidget(), HomeWidget()];
+  int? a;
+  var pages = [HomeWidget(), CourseWidget(), PersonWidget()];
 
   var _pageController = PageController(initialPage: 0);
 
@@ -20,6 +23,8 @@ class MainWidgetState extends State {
         itemBuilder: (BuildContext context, int dex) {
           return pages.elementAt(currentIndex);
         },
+        physics: NeverScrollableScrollPhysics(),
+
         controller: _pageController,
         itemCount: pages.length,
         onPageChanged: _changeIndex,
@@ -47,6 +52,7 @@ class MainWidgetState extends State {
   }
 
   void _changeIndex(int dex) {
+
     setState(() {
       if (currentIndex != dex) {
         currentIndex = dex;
@@ -55,6 +61,7 @@ class MainWidgetState extends State {
   }
 
   void _onItemTapped(int index) {
+
     //bottomNavigationBar 和 PageView 关联
     _pageController.animateToPage(index,
         duration: Duration(milliseconds: 300), curve: Curves.ease);

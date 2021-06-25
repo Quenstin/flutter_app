@@ -28,7 +28,8 @@ class HomeWidgetState extends State {
             HomeFunctionItem(),
             projectTitle,
             directoryTitle,
-            DirectoryItem()
+            DirectoryItem(),
+            towBanner
           ],
         ),
       ),
@@ -36,6 +37,7 @@ class HomeWidgetState extends State {
   }
 }
 
+//专项学习
 var projectTitle = Container(
   alignment: Alignment.centerLeft,
   margin: EdgeInsets.only(left: 10, top: 10),
@@ -45,6 +47,7 @@ var projectTitle = Container(
   ),
 );
 
+///目录
 var directoryTitle = Container(
   height: 40,
   alignment: Alignment.center,
@@ -55,4 +58,14 @@ var directoryTitle = Container(
       shape: BoxShape.rectangle,
       borderRadius: BorderRadius.all(Radius.circular(5)),
       color: Colors.green),
+);
+
+var towBanner = Container(
+  height: 80,
+  margin: EdgeInsets.all(10),
+  decoration: BoxDecoration(
+    color: Colors.green,
+    shape: BoxShape.rectangle,
+    borderRadius: BorderRadius.all(Radius.circular(5))
+  ),
 );

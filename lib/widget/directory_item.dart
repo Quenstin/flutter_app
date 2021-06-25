@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// data on 4/23/21
 /// function is ：
 class DirectoryItem extends StatefulWidget {
-  DirectoryItem({Key key}) : super(key: key);
+  DirectoryItem({Key? key}) : super(key: key);
 
   @override
   _DirectoryItemState createState() => _DirectoryItemState();
@@ -14,7 +14,6 @@ class _DirectoryItemState extends State<DirectoryItem> {
   _createGridViewItem(String image, String name) {
     return Container(
       height: 40,
-      width: 150,
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
           shape: BoxShape.rectangle,
@@ -40,8 +39,12 @@ class _DirectoryItemState extends State<DirectoryItem> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        _createGridViewItem("image/a.png", "学拼音"),
-        _createGridViewItem("image/a.png", "学拼音"),
+        Flexible(
+          child: _createGridViewItem("image/a.png", "学拼音"),
+        ),
+        Flexible(
+          child: _createGridViewItem("image/a.png", "学拼音"),
+        )
       ],
     );
   }

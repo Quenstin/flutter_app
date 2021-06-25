@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 /// data on 4/22/21
 /// function is ：自定义viewpager
 class ViewPager extends StatefulWidget {
-  ViewPager({Key key}) : super(key: key);
+  ViewPager({Key? key}) : super(key: key);
 
   @override
   _ViewPagerState createState() => _ViewPagerState();
@@ -18,7 +18,7 @@ class _ViewPagerState extends State<ViewPager> {
     'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2877516247,37083492&fm=26&gp=0.jpg',
   ];
 
-  PageController _pageController;
+  late PageController _pageController;
   var currPagerValue = 0.0;
   double _scaleFactor = .8;
   double height = 180.0;
@@ -29,7 +29,7 @@ class _ViewPagerState extends State<ViewPager> {
     _pageController = PageController(viewportFraction: 0.9);
     _pageController.addListener(() {
       setState(() {
-        currPagerValue = _pageController.page;
+        currPagerValue = _pageController.page!;
       });
     });
   }
@@ -48,6 +48,7 @@ class _ViewPagerState extends State<ViewPager> {
         itemBuilder: (context, index) => _itemBuilder(index),
         itemCount: 10,
         controller: _pageController,
+
       ),
     );
   }
