@@ -11,7 +11,7 @@ class PersonWidget extends StatelessWidget {
     '上传视频',
     '播放记录',
     '考前猜题',
-    '每天一到热门题',
+    '每天热门题',
     '产品勘误表',
     '我的答案',
     '收藏管理',

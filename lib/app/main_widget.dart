@@ -11,7 +11,6 @@ class MainWidget extends StatefulWidget {
 
 class MainWidgetState extends State {
   var currentIndex = 0;
-  int? a;
   var pages = [HomeWidget(), CourseWidget(), PersonWidget()];
 
   var _pageController = PageController(initialPage: 0);
